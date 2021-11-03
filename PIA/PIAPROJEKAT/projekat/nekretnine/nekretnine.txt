@@ -1,0 +1,149 @@
+/* 1 */
+{
+    "_id" : ObjectId("60f0210886e3e91fdc75bbce"),
+    "IdNek" : 1,
+    "naziv" : "Jednosoban Stan",
+    "grad" : "Beograd",
+    "opstina" : "Zvezdara",
+    "ulica" : "neka",
+    "brojUlice" : 3,
+    "tip" : "stan",
+    "brSpratova" : null,
+    "naKomSpratu" : 2,
+    "spratoviZgrade" : 3,
+    "kvadratura" : 100,
+    "brSoba" : 4,
+    "namestena" : true,
+    "tipProdaje" : "izdavanje",
+    "cena" : 100,
+    "vlasnik" : "kor",
+    "odobrena" : true,
+    "featured" : false,
+    "visits" : 2,
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("60f0214b86e3e91fdc75bbd2"),
+    "IdNek" : 2,
+    "naziv" : "Dvosoban Stan",
+    "grad" : "Novi Sad",
+    "opstina" : "Novi Sad",
+    "ulica" : "neka",
+    "brojUlice" : 2,
+    "tip" : "stan",
+    "brSpratova" : null,
+    "naKomSpratu" : 1,
+    "spratoviZgrade" : 4,
+    "kvadratura" : 100,
+    "brSoba" : 3,
+    "namestena" : false,
+    "tipProdaje" : "izdavanje",
+    "cena" : 150,
+    "vlasnik" : "kor",
+    "odobrena" : true,
+    "featured" : true,
+    "visits" : 1,
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("60f0217086e3e91fdc75bbd6"),
+    "IdNek" : 3,
+    "naziv" : "Trosoban Stan",
+    "grad" : "Beograd",
+    "opstina" : "Palilula",
+    "ulica" : "neka",
+    "brojUlice" : 4,
+    "tip" : "stan",
+    "brSpratova" : null,
+    "naKomSpratu" : 10,
+    "spratoviZgrade" : 15,
+    "kvadratura" : 100,
+    "brSoba" : 2,
+    "namestena" : true,
+    "tipProdaje" : "izdavanje",
+    "cena" : 100,
+    "vlasnik" : "kor",
+    "odobrena" : true,
+    "featured" : false,
+    "visits" : 3,
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("60f021b086e3e91fdc75bbda"),
+    "IdNek" : 4,
+    "naziv" : "Kuca Jedan",
+    "grad" : "Beograd",
+    "opstina" : "Beograd",
+    "ulica" : "neka",
+    "brojUlice" : 12,
+    "tip" : "kuca",
+    "brSpratova" : 3,
+    "naKomSpratu" : null,
+    "spratoviZgrade" : null,
+    "kvadratura" : 1000,
+    "brSoba" : 2,
+    "namestena" : true,
+    "tipProdaje" : "prodaja",
+    "cena" : 10000,
+    "vlasnik" : "agencija",
+    "odobrena" : true,
+    "featured" : true,
+    "visits" : 2,
+    "__v" : 0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("60f021d886e3e91fdc75bbde"),
+    "IdNek" : 5,
+    "naziv" : "Kuca Dva",
+    "grad" : "Novi Sad",
+    "opstina" : "Novi Sad",
+    "ulica" : "neka",
+    "brojUlice" : 8,
+    "tip" : "kuca",
+    "brSpratova" : 2,
+    "naKomSpratu" : null,
+    "spratoviZgrade" : null,
+    "kvadratura" : 10,
+    "brSoba" : 3,
+    "namestena" : true,
+    "tipProdaje" : "izdavanje",
+    "cena" : 500,
+    "vlasnik" : "agencija",
+    "odobrena" : true,
+    "featured" : false,
+    "visits" : 2,
+    "__v" : 0
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("60f0220286e3e91fdc75bbe2"),
+    "IdNek" : 6,
+    "naziv" : "Kuca Tri",
+    "grad" : "Uzice",
+    "opstina" : "Uzice",
+    "ulica" : "neka",
+    "brojUlice" : 3,
+    "tip" : "kuca",
+    "brSpratova" : 10,
+    "naKomSpratu" : null,
+    "spratoviZgrade" : null,
+    "kvadratura" : 100,
+    "brSoba" : 2,
+    "namestena" : false,
+    "tipProdaje" : "prodaja",
+    "cena" : 1000,
+    "vlasnik" : "agencija",
+    "odobrena" : true,
+    "featured" : true,
+    "visits" : 0,
+    "__v" : 0
+}

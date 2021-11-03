@@ -1,0 +1,23 @@
+<section class="bg-prime" style=" min-height:100vh">
+    <div class="bg-light container center-text" style="height: 100vh">
+        <h3>Prijava</h3>
+        <div>
+            <form [formGroup]='form' class="container center-text">
+                Korisnicko ime:<input type="text" formControlName='username'/><br>
+                <div *ngIf='form.controls.username.errors&&form.controls.username.touched||failed'>
+                    Polje je obavezno
+                </div>
+                Lozinka:<input type="password" formControlName='password'/><br>
+                <div *ngIf='form.controls.password.errors&&form.controls.password.touched||failed'>
+                    Polje je obavezno
+                </div>
+                <div>
+                    <button (click)='prijava()'>Prijava</button>
+                </div>
+                <div *ngIf='poruka'>
+                    {{poruka}}
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

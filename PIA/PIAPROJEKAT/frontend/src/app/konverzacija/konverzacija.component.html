@@ -1,0 +1,113 @@
+<section class="bg-prime">
+    <div *ngFor='let p of konv.poruke'>
+    <div [class]="p.sender!=user.username? 'container left-text': 'container right-text'">
+        <div [class]="p.sender!=user.username? 'msg leftMsg':'msg rightMsg'">
+            <div class="msgContainer">
+                
+                    <div *ngIf='user.tip=="korisnik"'>
+                        <div *ngIf='(p.sender==user.username)&&(user.username==konv.vlasnik)'>
+                            Vlasnik:
+                        </div>
+                        <div *ngIf='(p.sender!=user.username)&&(user.username==konv.vlasnik)'>
+                            Kupac:
+                        </div>
+                        <div *ngIf='(p.sender==user.username)&&(user.username!=konv.vlasnik)'>
+                            Kupac:
+                        </div>
+                        <div *ngIf='(p.sender!=user.username)&&(user.username!=konv.vlasnik)'>
+                            Vlasnik:
+                        </div>
+                    </div>
+                    <div *ngIf='user.tip=="agent"&&p.tipUser!="korisnik"'>
+                            {{p.sender}}:
+                    </div>
+                    <div *ngIf='p.sender!=user.username&&p.tipUser!="agent"&&user.tip!="korisnik"'>
+                        Kupac:
+                    </div>
+                
+                    <div *ngIf='p.tipPoruke!="text"'>
+                        <div *ngIf='p.tipPoruke=="ponudaIzdavanje"'>
+                            Od:{{p.datumOd}}<br>
+                            Do:{{p.datumTo}}<br>
+                            Cena:{{p.cena}}<br>
+                        </div>
+                        <div *ngIf='p.tipPoruke=="ponudaProdaja"'>
+                            Ucesce:{{p.ucesce}}
+                            Cena:{{p.cena}}
+                        </div>
+                        <div *ngIf='p.prihvacena=="cekanje"&&(user.username==konv.vlasnik||(user.tip=="agent"&&konv.vlasnik=="agencija"))'>
+                            <button *ngIf='p.tipPoruke=="ponudaIzdavanje"' (click)='placeOrderIzdavanje(p)'>Prihvati</button>
+                            <button *ngIf='p.tipPoruke=="ponudaProdaja"' (click)='placeOrderProdaja(p)'>Prihvati</button>
+                            <button *ngIf='p.tipPoruke=="ponudaProdaja"||p.tipPoruke=="ponudaIzdavanje"'(click)="odbijPonudu(p)">Odbij</button>
+                        </div>
+                        <div *ngIf='p.prihvacena!="cekanje"'>
+                            {{p.prihvacena}}
+                        </div>
+                    </div>
+                    <div *ngIf='p.tipPoruke=="tekst"' class="container">
+                        <div >{{p.poruka.slice(0,16)}}</div>
+                        <div *ngIf='p.poruka.length>16'>{{p.poruka.slice(16,32)}}</div>
+                        <div *ngIf='p.poruka.length>32'>{{p.poruka.slice(32,48)}}</div>
+                        <div *ngIf='p.poruka.length>48'>{{p.poruka.slice(48,64)}}</div>
+                        <div *ngIf='p.poruka.length>64'>{{p.poruka.slice(64,80)}}</div>
+                        <div *ngIf='p.poruka.length>80'>{{p.poruka.slice(80,90)}}</div>
+                    </div>
+            </div>
+            
+        </div><br>
+    </div>
+    </div>
+</section>
+<section class="bg-light extender">
+    <div *ngIf='!blockedKonvo&&konv.status!="arhivirana"' class="container">
+    
+        <div>
+            <textarea [(ngModel)]='tekstPoruke' cols="48" rows="2" maxlength=96></textarea>
+            <div>
+                <button (click)='dodajProuku()'>Posalji</button>
+                <button (click)="blokiraj()">Blokiraj</button>
+            </div>
+        </div>
+        <div *ngIf='user.tip=="korisnik"'>
+            <hr>
+            <p>Ponuda:</p>
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="izdavanje" '>
+                cena:<input type="number" name="cena" [(ngModel)]="cena">
+                Od:<input type="date" name="odDate"  [(ngModel)]='odDate' id="odDate">
+                Do:<input type="date" name="toDate" [(ngModel)]='doDate' id="toDate">
+                <div *ngIf='pogresanDatumPoruka'>{{pogresanDatumPoruka}}</div>
+            </div>
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="prodaja"'>
+                cena:<input type="number" name="cena" [(ngModel)]="cena">
+                Gotovina:<input type="radio" name="nacinPlacanja" [(ngModel)]="tipPlacanja" value="gotovina">
+                Kredit:<input type="radio" name="nacinPlacanja" [(ngModel)]="tipPlacanja" value="kredit">
+                <div *ngIf="prodajaPoruka">
+                    {{prodajaPoruka}}
+                </div>
+            </div>
+    
+            <div *ngIf='ucesce'>
+                ucesce:{{ucesce}}
+            </div>
+    
+            <div *ngIf='totalCost'>
+                Ukupno:{{totalCost}}
+            </div>
+    
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="izdavanje"'>
+                <button (click)="ponudaIzdavanje()">Zakupi</button>
+            </div>
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="prodaja"'>
+                <button (click)="ponudaProdaja()">Prodaja</button>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <div *ngIf='blokirao'>
+        <button (click)='odblokiraj()'>Odblokiraj</button>
+    </div>
+    <div>
+        <button (click)='nazad()'>Nazad</button>
+    </div>
+</section>

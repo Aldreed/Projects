@@ -1,0 +1,20 @@
+export default class Nekretnina{
+    IdNek:number;
+    naziv:string;
+    grad:string;
+    opstina:string;
+    ulica:string;
+    brojUlice:string;
+    tip:string;
+    brSpratova:number;
+    naKomSpratu:number;
+    spratoviZgrade:number;
+    kvadratura:number;
+    brSoba:number;
+    namestena:boolean;
+    tipProdaje:string;
+    cena:number;
+    vlasnik:string;
+    odobrena:boolean;
+    visits:number;
+}

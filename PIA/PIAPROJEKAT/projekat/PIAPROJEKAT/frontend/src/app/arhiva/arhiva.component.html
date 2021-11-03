@@ -1,0 +1,22 @@
+<header class="bg-light">
+    <div class="split">
+        <div class="navCard"><a routerLink="/aktivnePoruke">Aktivne poruke</a></div>
+        <div class="navCard" style="text-decoration: underline; color: white;"><a routerLink="/aktivnePoruke/arhiva">Arhiva</a></div>
+    </div>
+</header>
+<section class="bg-light extender" >
+    <div *ngFor='let k of konv '>
+        <div (click)='izaberiKonverzaciju(k)'>
+            {{k.naziv}},{{helperDate(k.poslednjaPoruka)}}
+        </div>
+        <div>
+            <button (click)='aktiviraj(k)'>Aktiviraj</button>
+        </div>
+    </div>
+    <div *ngIf="konv.length==0" style=" min-height:100vh">
+       
+    </div>
+    <div *ngIf='poruka'>
+        {{poruka}}
+    </div>
+</section>

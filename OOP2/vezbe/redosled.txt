@@ -1,0 +1,37 @@
+#######################################################
+Redosled kojim bi studenti trebalo da citaju fajlove:
+#######################################################
+================================
+I Paket "interfaces"
+================================
+1. I1.java
+2. I2.java
+3. ClassWithInterfaces1.java
+4. ClassWithInterfaces2.java
+================================
+II Paket "interfaces.cloneable"
+================================
+1. Part.java
+2. CoolPart.java
+3. NotCoolPart.java
+4. Whole.java
+5. Main.java
+6. CloneableAffinity.java
+================================
+III Paket "exceptions"
+================================
+1. Exceptions1.java
+2. Exceptions2.java
+3. Exceptions3.java
+================================
+IV Paket "nested"
+================================
+1. Outer.java
+2. Lambdas.java
+================================
+V Paket "generics"
+================================
+1. PreGenDemo.java
+2. GenDemo1.java
+3. GenDemo2.java
+4. Collects.java

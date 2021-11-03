@@ -1,0 +1,24 @@
+#######################################################
+Redosled kojim bi studenti trebalo da citaju fajlove:
+#######################################################
+================================
+I Paket "threads"
+================================
+1. Intro.java
+2. BasicCommunication.java
+3. Synchronization.java
+================================
+II Paket "threads.warehouse"
+================================
+1. Warehouse.java
+2. Worker.java
+3. Producer.java
+4. Consumer.java
+5. Main.java
+================================
+III Paket "threads.boss_workers"
+================================
+1. Worker.java
+2. Boss.java
+3. Main.java
+================================

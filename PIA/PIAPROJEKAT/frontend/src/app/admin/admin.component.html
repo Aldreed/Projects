@@ -1,0 +1,341 @@
+<section class="bg-prime extender">
+<div class="bg-light container center-text">
+    
+        <h4>Korisnici</h4>
+        <div *ngFor='let k of odobreniKorisnici'>
+            <div *ngIf='!edit'>
+                <hr>
+                <table class="container">
+                    <tr>
+                        <td>
+                            Ime:
+                        </td>
+                        <td>
+                            {{k.ime}}
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            Prezime:
+                        </td>
+                        <td>
+                            {{k.prezime}}
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            Username:
+                        </td>
+                        <td>
+                            {{k.username}}
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            Drzava:
+                        </td>
+                        <td>
+                            {{k.drzava}}
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            Grad:
+                        </td>
+                        <td>
+                            {{k.grad}}
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            Tip:
+                        </td>
+                        <td>
+                            {{k.tip}}
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            E-mail:
+                        </td>
+                        <td>
+                            {{k.email}}
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            Slika:
+                        </td>
+                        <td>
+                            <img [src]="getLinkPicture(k)">
+                        </td>
+                    </tr>
+                </table>
+                <button (click)='editF(k)'>Izmeni</button>
+                <button *ngIf='k.tip!="admin"'(click)='removeUser(k)'>Obrisi</button>
+                <button *ngIf='k.odobren==false'(click)='odobri(k)'>Odobri</button>
+                <button *ngIf='k.odobren==false'(click)='removeUser(k)'>Odbaci</button>
+            </div>
+        </div>
+        <button *ngIf='!edit' (click)='dodajKorisnika()'>Dodaj Korisnika</button>
+    <hr>
+        <div *ngIf='edit'>
+            <form [formGroup]="form">
+                <div class="container">
+                  <table class="container"> 
+                    <tr>
+                      <td>Ime:</td>
+                      <td><input formControlName="ime" type="text" value={{user.ime}} placeholder={{user.ime}}/><br/></td>
+                      <td *ngIf='failed&&form.value.ime==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>
+                        Prezime:
+                      </td>
+                      <td>
+                        <input formControlName="prezime" type="text" value={{user.prezime}} placeholder={{user.prezime}} /><br/>
+                      </td>
+                      <td *ngIf='failed&&form.value.prezime==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+    
+                    <!-- <tr>
+                      <td>
+                        Korisnicko ime:
+                      </td>
+                      <td>
+                        <input formControlName="username" type="text" value={{user.username}} placeholder={{user.username}}/><br/>
+                      </td>
+                      <td *ngIf='failed&&form.value.username==null'>
+                        {{poruka}}
+                      </td>
+                      <td *ngIf='porukaUsername'>
+                        {{porukaUsername}}
+                      </td>
+                    </tr> -->
+    
+                    <tr>
+                      <td>E-mail:</td>
+                      <td><input formControlName="email" type="email" value={{user.email}}  placeholder={{user.email}}/><br/></td>
+                      <td *ngIf='failed&&form.value.email==null'>
+                        {{poruka}}
+                      </td>
+                      <td *ngIf='porukaEmail'>
+                        {{porukaEmail}}
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>Grad:</td>
+                      <td><input formControlName="grad" type="text" value={{user.grad}}  placeholder={{user.grad}}/><br/></td>
+                      <td *ngIf='failed&&form.value.grad==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+    
+                    <tr>
+                      <td>Drzava:</td>
+                      <td><input formControlName="drzava" type="text" value={{user.drzava}} placeholder={{user.drzava}}/><br/></td>
+                      <td *ngIf='failed&&form.value.drzava==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+    
+                    <!-- <tr>
+                      <td>Tip:</td>
+                      <td><input formControlName="tip" type="text" value={{user.tip}}  placeholder={{user.tip}}/><br/></td>
+                      <td *ngIf='failed&&form.value.tip==null'>
+                        {{poruka}}
+                      </td>
+                    </tr> -->
+                    <tr>
+                        <td>
+                            <div>
+                                Nova Slika:<input (change)="onFileSelect($event)" type="file" />
+                              </div>
+                        </td>
+                          <td>
+                              <div *ngIf="imageData">
+                                <img [src]="imageData" [alt]="form.value.name" />
+                              </div>
+                          </td>
+                    </tr>
+                  </table>
+                  <button (click)="updateUser()">Sacuvaj izmene</button>
+                </div>
+            </form>
+        </div>
+    
+        <div *ngIf='!edit'>
+            <h4>Neodobrene nekretnine</h4>
+            <div *ngFor='let n of neodobreneNekretnine'>
+                <hr>
+                <table class="container">
+                    <tr>
+                        <td>
+                            IdNek:
+                        </td>
+                        <td>
+                            {{n.IdNek}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Naziv:
+                        </td>
+                        <td>
+                            {{n.naziv}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Vlasnik:
+                        </td>
+                        <td>
+                            {{n.vlasnik}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cena:
+                        </td>
+                        <td>
+                            {{n.cena}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tip Prodaje:
+                        </td>
+                        <td>
+                            {{n.tipProdaje}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Grad:
+                        </td>
+                        <td>
+                            {{n.grad}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ulica:
+                        </td>
+                        <td>
+                            {{n.ulica}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tip:
+                        </td>
+                        <td>
+                            {{n.tip}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Br spratova:
+                        </td>
+                        <td>
+                            {{n.brSpratova}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Br soba:
+                        </td>
+                        <td>
+                            {{n.brSoba}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Spat:
+                        </td>
+                        <td>
+                            {{n.naKomSpratu}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Spratovi zgrade:
+                        </td>
+                        <td>
+                            {{n.spratoviZgrade}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Namestena:
+                        </td>
+                        <td>
+                            {{n.namestena}}
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <button (click)='odobriNek(n)'>Odobri</button>
+            </div>
+            <button (click)='dodajNekretninu()'>Dodaj Nekretninu</button>
+            
+            <hr>
+            <div class="container center-text">
+                <h4>Izdavanja</h4>
+                <div *ngFor='let i of odobrenaIzdavanja'>
+                    Nekretnina:{{i.IdNek}},Vlasnik:{{i.vlasnik}},Totalna cena:{{i.totalCost}},<span *ngIf='i.vlasnik!="agencija"'>Profit:{{i.totalCost*i.procenat}}</span><span *ngIf='i.vlasnik=="agencija"'>Profit:{{i.totalCost}}</span>
+                </div>
+                <div>
+                    total:{{totalIzdavanje}};
+                </div>
+            </div>
+            <hr>
+            <div class="container center-text">
+                <h4>Prodaje</h4>
+                <div *ngFor='let i of odobreneProdaje'>
+                    Nekretnina:{{i.IdNek}}
+                    Vlasnik:{{i.vlasnik}}
+                    Totalna Cena:{{i.totalCost}},<span *ngIf='i.vlasnik!="agencija"'>Profit:{{i.totalCost*i.procenat}}</span><span *ngIf='i.vlasnik=="agencija"'>Profit:{{i.totalCost}}</span>
+                </div>
+                <div>
+                    total:{{totalProdaje}};
+                </div>
+            </div>
+            <hr>
+            <div class="container center-text">
+                total:{{total}};
+            </div>
+            <hr>
+            <h4>Procenat</h4>
+            <div>
+                <table class="container">
+                    <tr>
+                        <td>Procenat:</td>
+                        <td><input type="number" name="novProcenat" [(ngModel)]="novProcenat"/></td>
+                    </tr>
+                    <tr>
+                        <td>Tip:</td>
+                        <td>
+                            Izdavanje<input type="radio" name="novProcenat" [(ngModel)]="tipProcenta" value="izdavanje"/>
+                            Prodaja<input type="radio" name="novProcenat" [(ngModel)]="tipProcenta" value="prodaja"/>
+                        </td>
+                    </tr>
+                </table>
+                <button (click)='dodajProcenat()'>Dodaj procenat</button>
+            </div>
+        </div>
+</div>
+</section>

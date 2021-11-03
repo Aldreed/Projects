@@ -1,0 +1,179 @@
+/* 1 */
+{
+    "_id" : ObjectId("60f0210886e3e91fdc75bbcf"),
+    "IdMedia" : 1,
+    "nekretninaId" : 1,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment1.jpg1626349832940.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("60f0210886e3e91fdc75bbd0"),
+    "IdMedia" : 1626349832972.0,
+    "nekretninaId" : 1,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment3.jpg1626349832944.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("60f0210986e3e91fdc75bbd1"),
+    "IdMedia" : 1626349833076.0,
+    "nekretninaId" : 1,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment2.jpg1626349832942.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("60f0214b86e3e91fdc75bbd3"),
+    "IdMedia" : 1626349899945.0,
+    "nekretninaId" : 2,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment1.jpg1626349899886.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("60f0214b86e3e91fdc75bbd5"),
+    "IdMedia" : 1626349899948.0,
+    "nekretninaId" : 2,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment2.jpg1626349899887.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("60f0217086e3e91fdc75bbd7"),
+    "IdMedia" : 1626349936877.0,
+    "nekretninaId" : 3,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment1.jpg1626349936859.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("60f0217086e3e91fdc75bbd8"),
+    "IdMedia" : 1626349936883.0,
+    "nekretninaId" : 3,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment4.jpg1626349936860.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("60f0217086e3e91fdc75bbd9"),
+    "IdMedia" : 1626349936885.0,
+    "nekretninaId" : 3,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment2.jpg1626349936861.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 9 */
+{
+    "_id" : ObjectId("60f021b086e3e91fdc75bbdb"),
+    "IdMedia" : 1626350000529.0,
+    "nekretninaId" : 4,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse1.jpg1626350000510.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 10 */
+{
+    "_id" : ObjectId("60f021b086e3e91fdc75bbdc"),
+    "IdMedia" : 1626350000535.0,
+    "nekretninaId" : 4,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse2.jpg1626350000511.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 11 */
+{
+    "_id" : ObjectId("60f021b086e3e91fdc75bbdd"),
+    "IdMedia" : 1626350000537.0,
+    "nekretninaId" : 4,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse3.jpg1626350000512.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 12 */
+{
+    "_id" : ObjectId("60f021d886e3e91fdc75bbdf"),
+    "IdMedia" : 1626350040813.0,
+    "nekretninaId" : 5,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse1.jpg1626350040790.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 13 */
+{
+    "_id" : ObjectId("60f021d886e3e91fdc75bbe0"),
+    "IdMedia" : 1626350040816.0,
+    "nekretninaId" : 5,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse3.jpg1626350040791.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 14 */
+{
+    "_id" : ObjectId("60f021d886e3e91fdc75bbe1"),
+    "IdMedia" : 1626350040818.0,
+    "nekretninaId" : 5,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse2.jpg1626350040792.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 15 */
+{
+    "_id" : ObjectId("60f0220286e3e91fdc75bbe3"),
+    "IdMedia" : 1626350082892.0,
+    "nekretninaId" : 6,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse1.jpg1626350082867.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 16 */
+{
+    "_id" : ObjectId("60f0220286e3e91fdc75bbe4"),
+    "IdMedia" : 1626350082894.0,
+    "nekretninaId" : 6,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse3.jpg1626350082868.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 17 */
+{
+    "_id" : ObjectId("60f0220286e3e91fdc75bbe5"),
+    "IdMedia" : 1626350082896.0,
+    "nekretninaId" : 6,
+    "mediaPath" : "http://localhost:4000/MediaImages/agencijaHouse2.jpg1626350082870.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}
+
+/* 18 */
+{
+    "_id" : ObjectId("60f031dbfe56ee21d4b1b83e"),
+    "IdMedia" : 1626354139053.0,
+    "nekretninaId" : 2,
+    "mediaPath" : "http://localhost:4000/MediaImages/korApartment3.jpg1626354139030.jpeg",
+    "mediaType" : "image",
+    "__v" : 0
+}

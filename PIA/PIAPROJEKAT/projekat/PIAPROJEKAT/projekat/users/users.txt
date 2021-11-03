@@ -1,0 +1,95 @@
+/* 1 */
+{
+    "_id" : ObjectId("60eefbb4a9530702780564fa"),
+    "ime" : "A",
+    "prezime" : "Dmin",
+    "username" : "admin",
+    "lozinka" : "`aA12345",
+    "email" : "notMail@gmail.com",
+    "grad" : "Grad",
+    "drzava" : "drzava",
+    "imagePath" : "http://localhost:4000/images/admin.jpeg",
+    "tip" : "admin",
+    "odobren" : true,
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("60ef006a8101a41c849505d4"),
+    "ime" : "Cirko",
+    "prezime" : "Ciric",
+    "username" : "kor1",
+    "lozinka" : "`aA12345",
+    "email" : "123@smt",
+    "grad" : "Bec",
+    "drzava" : "Austrija",
+    "imagePath" : "http://localhost:4000/preparedImages/basic.png",
+    "tip" : "korisnik",
+    "odobren" : true,
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("60ef06918101a41c849505d5"),
+    "ime" : "Nikola",
+    "prezime" : "Nikolic",
+    "username" : "kor",
+    "lozinka" : "`aA12345",
+    "email" : "notMail1@gmail.com",
+    "grad" : "Beograd",
+    "drzava" : "Srbija",
+    "imagePath" : "http://localhost:4000/preparedImages/basic.png",
+    "tip" : "korisnik",
+    "odobren" : true,
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("60ef07e38101a41c849505d6"),
+    "ime" : "Stefan",
+    "prezime" : "Stefanovic",
+    "username" : "kor12",
+    "lozinka" : "`aA12345",
+    "email" : "123@notmail.com",
+    "grad" : "Nis",
+    "drzava" : "Srbija",
+    "imagePath" : "http://localhost:4000/images/kor12.jpeg",
+    "tip" : "korisnik",
+    "odobren" : true,
+    "__v" : 0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("60ef430f11ce911ba4411173"),
+    "ime" : "A",
+    "prezime" : "Gent",
+    "username" : "agent",
+    "lozinka" : "`aA12345",
+    "email" : "123@gmail.com",
+    "grad" : "Valjevo",
+    "drzava" : "Srbija",
+    "imagePath" : "http://localhost:4000/images/agent.jpeg",
+    "tip" : "agent",
+    "odobren" : true,
+    "__v" : 0
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("60ef48c611ce911ba4411182"),
+    "ime" : "A",
+    "prezime" : "GentB",
+    "username" : "agentB",
+    "lozinka" : "`aA12345",
+    "email" : "notMail2@gmail.com",
+    "grad" : "Novi Sad",
+    "drzava" : "Srbija",
+    "imagePath" : "http://localhost:4000/preparedImages/basic.png",
+    "tip" : "agent",
+    "odobren" : true,
+    "__v" : 0
+}

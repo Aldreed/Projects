@@ -1,0 +1,8 @@
+/* 1 */
+{
+    "_id" : ObjectId("60f031ccfe56ee21d4b1b83d"),
+    "IdBlock" : 1,
+    "blokirao" : "kor",
+    "blokiran" : "kor12",
+    "__v" : 0
+}

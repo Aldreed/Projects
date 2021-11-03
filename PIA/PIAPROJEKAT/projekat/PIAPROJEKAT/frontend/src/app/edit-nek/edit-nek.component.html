@@ -1,0 +1,190 @@
+<header>
+    <div class="split">
+        <div class="navCard"  ><a routerLink="/editUser">Profil</a></div>
+        <div class="navCard"style="text-decoration: underline; color: white;" ><a routerLink="/editUser/editNek">Nekretnine</a></div>
+    </div>
+  </header>
+<section class="bg-prime extender">
+    <div class="container center-text">
+        <table class="searchTable container" *ngIf='!izabranaNekretnina'>
+            <tr *ngFor='let r of nekretnine' class="searchRes">
+                <div class="search">
+                    <div (click)='izaberiNekrentinu(r)' class="search">
+                        <hr>
+                        <div class="split center-text container">
+                              <div>
+                                  <table style="max-width: 100%;" class="container">
+                                      <tr>
+                                          <td>Naziv:</td>
+                                          <td>{{r.naziv}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Vlasnik:</td>
+                                          <td>{{r.vlasnik}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Opstina:</td>
+                                          <td>{{r.opstina}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Grad:</td>
+                                          <td>{{r.grad}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Tip prodaje:</td>
+                                          <td>{{r.tipProdaje}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Tip nekrenine:</td>
+                                          <td>{{r.tip}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td> Br. soba:</td>
+                                          <td>{{r.brSoba}}</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Kvadratura:</td>
+                                          <td>{{r.kvadratura}}</td>
+                                      </tr>
+                                  </table>
+                                </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+            </tr>
+        </table>
+        <div *ngIf='izabranaNekretnina'>
+            <div>
+                <form [formGroup]="form">
+                    <div>
+                        <table class="container center-text">
+                            <tr>
+                              <td>Naziv:</td>
+                              <td><input formControlName="naziv" type="text" value={{izabranaNekretnina.naziv}} placeholder={{izabranaNekretnina.naziv}}/><br/></td>
+    
+                            </tr>
+    
+                            <tr>
+                              <td>
+                                Grad:
+                              </td>
+                              <td>
+                                <input formControlName="grad" type="text" value={{izabranaNekretnina.grad}} placeholder={{izabranaNekretnina.grad}} /><br/>
+                              </td>
+    
+                            </tr>
+    
+                            <tr>
+                              <td>Opstina:</td>
+                              <td><input formControlName="opstina" type="text" value={{izabranaNekretnina.opstina}}  placeholder={{izabranaNekretnina.opstina}}/><br/></td>
+    
+                            </tr>
+    
+                            <tr>
+                              <td>Ulica:</td>
+                              <td><input formControlName="ulica" type="text" value={{izabranaNekretnina.ulica}}  placeholder={{izabranaNekretnina.ulica}}/><br/></td>
+    
+                            </tr>
+    
+                            <tr>
+                              <td>Br. Ulice:</td>
+                              <td><input formControlName="brojUlice" type="number" value={{izabranaNekretnina.brojUlice}} placeholder={{izabranaNekretnina.brojUlice}}/><br/></td>
+    
+                            </tr>
+    
+    
+                            <tr *ngIf='izabranaNekretnina.tip=="stan"'>
+                                <td>Sprat:</td>
+                                <td><input formControlName="naKomSpratu" type="number" value={{izabranaNekretnina.naKomSpratu}} placeholder={{izabranaNekretnina.naKomSpratu}}/><br/></td>
+    
+                            </tr>
+    
+                            <tr>
+                                <td>Spratovi Zgrade:</td>
+                                <td><input formControlName="spratoviZgrade" type="number" value={{izabranaNekretnina.spratoviZgrade}} placeholder={{izabranaNekretnina.spratoviZgrade}}/><br/></td>
+    
+                            </tr>
+    
+    
+                            <tr *ngIf='izabranaNekretnina.tip=="kuca"'>
+                                <td>Br. Spratova:</td>
+                                <td><input formControlName="brSpratova" type="number" value={{izabranaNekretnina.brSpratova}} placeholder={{izabranaNekretnina.brSpratova}}/><br/></td>
+    
+                            </tr>
+    
+    
+    
+                            <tr>
+                                <td>Br. Soba:</td>
+                                <td><input formControlName="brSoba" type="number" value={{izabranaNekretnina.brSoba}} placeholder={{izabranaNekretnina.brSoba}}/><br/></td>
+    
+                            </tr>
+    
+                            <tr>
+                                <td>Kvadratura:</td>
+                                <td><input formControlName="kvadratura" type="number" value={{izabranaNekretnina.kvadratura}} placeholder={{izabranaNekretnina.kvadratura}}/><br/></td>
+    
+                            </tr>
+    
+                            <tr>
+                                <td>Namestena:</td>
+                                <td>
+                                    <input type="text" value={{izabranaNekretnina.namestena}} placeholder={{izabranaNekretnina.namestena}} disabled='true'/>
+                                    <input formControlName="namestena" type="radio" id='namestena' name="namestena"  value="true" />Namestena
+                                    <input formControlName="namestena" type="radio" id='namestena' name="namestena"  value="false"/>Nenamestena
+                                    <br/>
+                                </td>
+                                </tr>
+    
+                            <!-- <tr>
+                                <td>Tip Prodaje:</td>
+                                <td><input formControlName="tipProdaje" type="text" value={{izabranaNekretnina.tipProdaje}} placeholder={{izabranaNekretnina.tipProdaje}}/><br/></td>
+                                <td *ngIf='failed&&form.value.drzava==null'>
+                                  {{poruka}}
+                                </td>
+                            </tr> -->
+    
+                            <tr>
+                                <td>Cena:</td>
+                                <td><input formControlName="cena" type="number" value={{izabranaNekretnina.cena}} placeholder={{izabranaNekretnina.cena}}/><br/></td>
+    
+                            </tr>
+    
+                          </table>
+                        <button (click)='updateNek()'>Sacuvaj izmene</button>
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <div *ngFor='let m of relatedMedia'>
+                <div class="split">
+                    <div>
+                        <div>
+                            Media id:{{relatedMedia.indexOf(m)}};{{m.mediaType}}
+                            <button (click)="ukloniMedij(m)">Obrisi</button>
+                            <div *ngIf="msgMarkers[relatedMedia.indexOf(m)]">{{porukaRemove}}</div>
+                        </div>
+                        <div *ngIf='m.mediaType=="image"'>
+                            <img [src]='m.mediaPath' alt="not found">
+                        </div>
+                        <div *ngIf='m.mediaType=="video"'>
+                            <video [src]='m.mediaPath'></video>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div>
+                <input type="file" accept="video/mp4 img/jpg img/png img/jpeg" (change)="onFileSelect($event)">
+                <button (click)='dodajMedij()'>Dodaj medji</button>
+                <div *ngIf="porukaInput">
+                    {{porukaInput}}
+                </div>
+            </div>
+            <div>
+                <button (click)='prekiniEdit()'>Nazad na Nekretnine</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+#######################################################
+Redosled kojim bi studenti trebalo da citaju fajlove:
+#######################################################
+================================
+I Paket "gui.drawing.shapes"
+================================
+1. Shape.java
+2. Circle.java
+3. Heart.java
+4. CanvasFail.java
+5. ActiveCanvas.java
+6. DrawingOnCanvas.java
+================================
+II Paket "gui.drawing.coins"
+================================
+1. Figure.java
+2. Coin.java
+3. Player.java
+4. Timer.java
+5. Scene.java
+6. CollectCoins.java
+================================

@@ -1,0 +1,164 @@
+<header class="bg-light">
+  <div class="split">
+      <div class="navCard" style="text-decoration: underline; color: white;" ><a routerLink="/editUser">Profil</a></div>
+      <div class="navCard" ><a routerLink="editNek">Nekretnine</a></div>
+  </div>
+</header>
+<section class="bg-prime extender">
+  <div class="bg-light">
+    <div *ngIf="!edit" class="bg-prime">
+        <table class="container center-text bg-light">
+            <tr>
+                <td>Ime:</td>
+                <td>{{user.ime}}</td>
+            </tr>
+            <tr>
+                <td>Prezime</td>
+                <td>{{user.prezime}}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr>
+                <td>Grad:</td>
+                <td>{{user.grad}}</td>
+            </tr>
+            <tr>
+                <td>Drzava:</td>
+                <td>{{user.drzava}}</td>
+            </tr>
+            <tr>
+                <td>Slika:</td>
+                <td><img [src]="getLinkPicture()"></td>
+            </tr>
+            Edit:<input type="checkbox" name="edit" [(ngModel)]="edit">
+        </table>
+        <hr>
+    </div>
+    <div *ngIf="edit">
+        <form [formGroup]="form">
+            <div>
+                <table class="container center-text">
+                    <tr>
+                      <td>Ime:</td>
+                      <td><input formControlName="ime" type="text" value={{user.ime}} placeholder={{user.ime}}/><br/></td>
+                      <td *ngIf='failed&&form.value.ime==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td>
+                        Prezime:
+                      </td>
+                      <td>
+                        <input formControlName="prezime" type="text" value={{user.prezime}} placeholder={{user.prezime}} /><br/>
+                      </td>
+                      <td *ngIf='failed&&form.value.prezime==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td>E-mail:</td>
+                      <td><input formControlName="email" type="email" value={{user.email}}  placeholder={{user.email}}/><br/></td>
+                      <td *ngIf='failed&&form.value.email==null'>
+                        {{poruka}}
+                      </td>
+                      <td *ngIf='porukaEmail'>
+                        {{porukaEmail}}
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td>Grad:</td>
+                      <td><input formControlName="grad" type="text" value={{user.grad}}  placeholder={{user.grad}}/><br/></td>
+                      <td *ngIf='failed&&form.value.grad==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+  
+                    <tr>
+                      <td>Drzava:</td>
+                      <td><input formControlName="drzava" type="text" value={{user.drzava}} placeholder={{user.drzava}}/><br/></td>
+                      <td *ngIf='failed&&form.value.drzava==null'>
+                        {{poruka}}
+                      </td>
+                    </tr>
+  
+                    <tr>
+                        <td>
+                            <div>
+                                Nova Slika:<input (change)="onFileSelect($event)" type="file" accept="image/jpg image/png image/jpeg" />
+                              </div>
+                        </td>
+                          <td>
+                              <div *ngIf="imageData">
+                                <img [src]="imageData" [alt]="form.value.name" />
+                              </div>
+                          </td>
+                    </tr>
+                  </table>
+                <button (click)="updateUser()">Sacuvaj izmene</button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="!edit" class="container center-text">
+        <h3>Promena lozinke</h3>
+        <form [formGroup]='passwordForm'>
+            <table class="container">
+              <tr>
+                <td>
+                  Stara lozinka:
+                </td>
+                <td>
+                  <input type="password" formControlName='staraLoz'/>
+                  <div *ngIf='passwordForm.controls.staraLoz.errors&&passwordForm.controls.staraLoz.touched'>
+                    Polje je obavezno
+                  </div>
+                  <div *ngIf='badPass'>
+                    {{pogresnaLoz}}
+                  </div>
+                </td>
+              </tr>
+  
+              <tr>
+                <td>
+                  Nova Lozinka:
+                </td>
+                <td>
+                  <input type="password" formControlName='novaLoz'/>
+                  <div *ngIf='(passwordForm.controls.novaLoz.invalid)&&passwordForm.controls.novaLoz.touched'>
+                    Polje je obavezno
+                  </div>
+                  <div *ngIf='passwordForm.controls.novaLoz.dirty&&(passwordForm.controls.novaLoz.errors)'>
+                    Lozinka treba da sardzi minimalno 8 karaktera a maximalno 24 karaktera. Treba da sadrzi jedno malo i jedno veliko slovo,jedan broj i jedan specijalan znak.
+                    Isti karakteri ne smeju da se pojavljuju 4 ili vise puta zaredom.
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Potvda lozinke
+                </td>
+                <td>
+                  <input type="password" formControlName='potvrdaLoz' />
+                  <div *ngIf='passwordForm.controls.potvrdaLoz.errors&&passwordForm.controls.potvrdaLoz.touched'>
+                    Polje je obavezno
+                  </div>
+                  <div *ngIf='passwordForm.controls.novaLoz.touched&&passwordForm.controls.potvrdaLoz.touched&&(this.passwordForm.value.novaLoz!=this.passwordForm.value.potvrdaLoz)'>
+                    {{nepoklapanjeLozinki}}
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button (click)='promeni()'>Promeni</button>
+                </td>
+              </tr>
+            </table>
+          </form>
+    </div>
+  </div>
+</section>

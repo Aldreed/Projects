@@ -1,0 +1,122 @@
+<section class="bg-prime extender">
+  <div class="bg-light container center-text">
+    <h1>Register</h1>
+    
+    <form [formGroup]="form">
+        <div>
+          <table class="container">
+            <tr>
+              <td>Ime:</td>
+              <td><input formControlName="ime" type="text" placeholder="Enter first name..." /><br/></td>
+              <td *ngIf='failed&&(form.value.ime===null||form.controls.ime.errors)'>
+                {{poruka}}
+              </td>
+            </tr>
+    
+            <tr>
+              <td>
+                Prezime:
+              </td>
+              <td>
+                <input formControlName="prezime" type="text" placeholder="Enter last name..." /><br/>
+              </td>
+              <td *ngIf='failed&&form.controls.prezime.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+    
+            <tr>
+              <td>
+                Korisnicko ime:
+              </td>
+              <td>
+                <input formControlName="username" type="text" placeholder="Enter username..." /><br/>
+              </td>
+              <td *ngIf='failed&&form.controls.username.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+    
+            <tr>
+              <td>Lozinka:</td>
+              <td><input class="form-control" formControlName="lozinka" type="password" placeholder="Enter lozinka..." /><br/></td>
+              <td *ngIf='failed&&form.controls.lozinka.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+    
+            <tr>
+              <td>E-mail:</td>
+              <td><input formControlName="email" type="email" placeholder="Enter email..." /><br/></td>
+              <td *ngIf='failed&&form.controls.email.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+    
+            <tr>
+              <td>Grad:</td>
+              <td><input formControlName="grad" type="text" placeholder="Enter city..." /><br/></td>
+              <td *ngIf='failed&&form.controls.grad.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+    
+            <tr>
+              <td>Drzava:</td>
+              <td><input formControlName="drzava" type="text" placeholder="Enter contry..." /><br/></td>
+              <td *ngIf='failed&&form.controls.drzava.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+
+            <tr *ngIf='user.tip=="admin"'>
+              <td>Tip:</td>
+              <td>
+                Korisnik:<input formControlName="tip" type="radio" value="korisnik" />
+                Admin:<input formControlName="tip" type="radio" value="admin" />
+                Agent:<input formControlName="tip" type="radio" value="agent" />
+                <br/>
+              </td>
+            </tr>
+
+          </table>
+        </div>
+        <div>
+          <input (change)="onFileSelect($event)" type="file" accept="image/jpg image/png image/jpeg" />
+        </div>
+        <div *ngIf="imageData">
+          <img [src]="imageData" [alt]="form.value.name" />
+        </div>
+        <div>
+          <button (click)='onSubmit()'>Dodaj profil</button>
+        </div>
+        <div *ngIf='porukaBackendUsername'>
+            {{porukaBackendUsername}}
+        </div>
+  
+        <div *ngIf='porukaBackendEmail'>
+          {{porukaBackendEmail}}
+        </div>
+        <div *ngIf='fileFormat'>
+          {{fileFormat}}
+        </div>
+
+        <div *ngIf="form.controls.lozinka.touched&&form.controls.lozinka.errors">
+          Lozinka treba da sardzi minimalno 8 karaktera a maximalno 24 karaktera. Treba da sadrzi jedno malo i jedno veliko slovo,jedan broj i jedan specijalan znak.
+          Isti karakteri ne smeju da se pojavljuju 4 ili vise puta zaredom.
+        </div>
+        <!-- <div>
+          <button (click)='getAll()'>Work</button>
+        </div>
+        <div *ngFor='let u of userArr'>
+          <img [src]="u.imagePath" [alt]="form.value.name" />
+        </div>
+        Todo uradi forme i ulepsaj poruke greski i dodaj default sliku,notifikacije,tip za korisnika -->
+      </form>
+  </div>
+</section>
+
+
+
+
+  

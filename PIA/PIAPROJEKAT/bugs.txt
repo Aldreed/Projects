@@ -1,0 +1,3 @@
+guest treba da vidi promocije
+Kada korisnik prihvati ponudu iz chata od nekog korisnika pise da je vlasnik i kupac te nekretnine FIX: u fajlu za chat iznad prihvatanja ponude postoji polje user to je potrebno obrisati i zameniti njenu referencu u funkicjama
+click na video play/pause

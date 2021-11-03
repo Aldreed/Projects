@@ -1,0 +1,93 @@
+regindpom xxxx 00aa stariji:pppp pppp mladji:pppp pppp 
+regdir xxxx 01aa 
+pcrel xxxx 10nn pppp pppp
+immed xxxx 11nn pppp pppp
+
+STACK ka visim
+
+Bezadresne:
+RTS    1111 0000
+RTI    1111 0001
+ASR    1111 0010
+LSR    1111 0011
+ROR    1111 0100
+ASL    1111 0101
+LSL    1111 0110
+INTE   1111 0111
+INTD   1111 1000
+STIVTP 1111 1001
+STSP   1111 1010
+PUSH   1111 1011
+POP    1111 1100
+HALT   1111 1101
+NOP    1111 1110
+Adresne:
+LD 	0010 sve
+LOADL 	0011 opernd ?
+LDW 	0100 sve 
+ST 	0101 ne immed 
+STW 	0110 ne immed 
+SWAP 	0111 ne immed
+ADD 	1000 sve
+SUB 	1001 sve
+AND 	1010 sve
+OR  	1011 sve
+XOR 	1100 sve
+NOT 	1101 sve 
+
+Bezuslovni
+JMP 0001 000n stariji:pppp pppp mladji:pppp pppp
+JSR 0001 001n stariji:pppp pppp mladji:pppp pppp
+
+Uslovni : svi 2 bajta relativni skok  16
+0000
+xxxx 0000 grt
+xxxx 0001 grte
+xxxx 0010 lss
+xxxx 0011 lsse
+xxxx 0100 gtru
+xxxx 0101 grteu
+xxxx 0110 lssu
+xxxx 0111 lsseu
+xxxx 1000 eql
+xxxx 1001 neql
+xxxx 1010 neg
+xxxx 1011 nneg
+xxxx 1100 ovf
+xxxx 1101 novf
+xxxx 1110 car
+xxxx 1111 ncar
+
+Oznake za skokove
+regdir 15
+regindpom 1A
+imm 1D
+pcrel 20
+
+LOADL 2D
+SWAP 30
+NOP 39
+HALT 3A
+INTD 3B
+INTE 3C
+LD 3D
+LDW 3F
+ST 40
+STW 46
+POP 4F
+PUSH 55
+STIVTP 59
+STSP 5A
+ADD 5B
+SUB 5D
+AND 5F
+OR 61
+XOR 63
+NOT 65
+ASR LSR ROR RORC 67
+ASL,LSL,ROL,ROLC 69
+USLOVNI 6B
+JMP 6D
+JSR 6E
+RTI 76
+RTS 80

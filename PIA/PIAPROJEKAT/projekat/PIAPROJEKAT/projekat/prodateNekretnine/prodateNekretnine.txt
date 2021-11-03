@@ -1,0 +1,12 @@
+/* 1 */
+{
+    "_id" : ObjectId("60f030a3fe56ee21d4b1b83c"),
+    "IdPro" : 1,
+    "IdNek" : 4,
+    "vlasnik" : "agencija",
+    "kupac" : "kor",
+    "totalCost" : 10000,
+    "odobreno" : true,
+    "procenat" : 0.3,
+    "__v" : 0
+}

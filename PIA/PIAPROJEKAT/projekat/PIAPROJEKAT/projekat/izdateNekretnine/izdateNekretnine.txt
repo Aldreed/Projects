@@ -1,0 +1,44 @@
+/* 1 */
+{
+    "_id" : ObjectId("60f0227b86e3e91fdc75bbe7"),
+    "IdIzd" : 1,
+    "IdNek" : 2,
+    "vlasnik" : "kor",
+    "kupac" : "kor12",
+    "datumOd" : ISODate("2021-07-12T00:00:00.000Z"),
+    "datumDo" : ISODate("2021-09-09T00:00:00.000Z"),
+    "totalCost" : 450,
+    "odobreno" : true,
+    "procenat" : 0.1,
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("60f02c85fe56ee21d4b1b838"),
+    "IdIzd" : 3,
+    "IdNek" : 3,
+    "vlasnik" : "kor",
+    "kupac" : "kor",
+    "datumOd" : ISODate("2021-09-10T00:00:00.000Z"),
+    "datumDo" : ISODate("2021-10-07T00:00:00.000Z"),
+    "totalCost" : 100,
+    "odobreno" : true,
+    "procenat" : 0.2,
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("60f02ffbfe56ee21d4b1b83a"),
+    "IdIzd" : 4,
+    "IdNek" : 5,
+    "vlasnik" : "agencija",
+    "kupac" : "agent",
+    "datumOd" : ISODate("2021-07-20T00:00:00.000Z"),
+    "datumDo" : ISODate("2021-08-12T00:00:00.000Z"),
+    "totalCost" : 123,
+    "odobreno" : true,
+    "procenat" : 0.2,
+    "__v" : 0
+}

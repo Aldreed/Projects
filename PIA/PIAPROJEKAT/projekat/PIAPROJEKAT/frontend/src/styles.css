@@ -1,0 +1,391 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root{
+    
+    --clr-prime-200: #f3e9c2;
+    --clr-prime-300: #F3EED9;
+    --clr-prime-400: #824936;
+
+    --clr-neutral-100:#FFF;
+    --clr-neutral-900: #222C2A;
+
+    --ff-primary: 'Helvetica',sans-serif;
+    --ff-accent: 'Garamond',serif;
+   
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p{
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-family: var(--ff-accent);
+    font-weight: 900;
+    line-height: 1;
+}
+
+
+h2,
+h3{
+    margin-bottom: 1em;
+}
+
+p{
+    margin-bottom: 0em;
+}
+
+header
+section{
+    padding: 2rem 0;
+
+}
+
+ 
+img{
+    max-width: 100%;
+}
+
+video{
+    max-width: 100%;
+    display: block;
+}
+
+.container{
+    margin-inline: auto;
+    width: min(90%,70.5rem);
+}
+
+.container--narrow{
+    max-width: 40rem;
+}
+
+.center-text{
+    text-align: center;
+}
+.left-text{
+    text-align: left;
+}
+.right-text{
+    text-align: right;
+}
+
+.search,
+.searchbar{
+    text-align: center;
+}
+
+.search{
+    background-color: var(--clr-prime-300);
+    color: var(--clr-neutral-900);
+    border-radius: 5%;
+}
+.msg{
+    background-color: var(--clr-prime-300);
+    color: var(--clr-neutral-900);
+    border-radius: 5%;
+}
+
+.rightMsg{
+    margin-left: 70%;
+}
+
+.leftMsg{
+    margin-right: 70%;
+}
+
+.msgContainer{
+    width: min(90%,70.5rem);
+}
+.split{
+    display: flex;
+    flex-direction: row;
+    align-self: normal;
+}
+.split > *{
+    flex-basis: 100%;
+}
+.split>*>img{
+    min-width: 100%;
+    min-height: 100%;
+    margin-inline: auto;
+    padding-left: 10%;
+}
+
+.searchTable{
+    min-width: 100%;
+}
+
+.searchTable>tr{
+    padding-top: 10rem;
+}
+
+.search>hr{
+    max-width: 95%;
+}
+@media(max-width: 800px){
+    .msg>*{
+        font-size: 0.75rem;
+    }
+} 
+
+@media(max-width: 500px){
+    .split{
+        flex-direction: column;
+    }
+
+    .split>*>img{
+        min-height: 100%;
+        min-width: 100%;
+        margin-inline: auto;
+        padding-left: 0%;
+    }
+    body{
+        font-size: 0.75rem;
+    }
+    form,button,input{
+        max-width: 100%;
+    }
+    table{
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    table>*{
+        flex-basis: 100%;
+    }
+    tr{
+        display: flex;
+        flex-direction:column;
+    };
+    tr>*{
+        flex-basis: 100%;
+    }
+    button{
+        font-size: 0.75rem;
+    }
+    
+    .searchTable>tr{
+        padding-top: 1rem;
+    }
+
+    .msg>*{
+        font-size: 0.5rem;
+    }
+}
+ 
+@media(max-width: 150px){
+    body{
+        font-size: 0.5rem;
+    }
+    button{
+        font-size: 0.5rem;
+    }
+} 
+
+.bg-light{
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-prime-300);
+}
+.bg-prime{
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-prime-400);
+}
+.bg-dark{
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral-900);
+}
+
+.bg-prime h2,
+.bg-dark h2{
+    color: var(--clr-prime-200);
+}
+
+
+
+/* navigacija */
+
+.active{
+    border-bottom-color: var(--clr-prime-300);
+}
+
+.navCard{
+    border-color: var(--clr-neutral-900);
+    border-bottom: 0.0625rem;
+    border-left: 0.0625rem;
+    border-right: 0.0625rem;
+    border-style: solid;
+    border-top-color: var(--clr-neutral-900);
+    border-left-color: var(--clr-neutral-900);
+    border-right-color: var(--clr-neutral-900);
+    border-bottom-color:var(--clr-neutral-900);
+    background-color: var(--clr-prime-400);
+     color: var(--clr-prime-200);
+    
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    /* margin-inline: 0.0625rem; */
+    text-align: center;
+    padding: 0.5rem;
+    height: 5rem;
+}
+
+.navCard a{
+    color: white;
+    text-decoration: none;
+    
+}
+.navCard a:link{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.navCard a:visited{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.navCard a:hover{
+    color: white;
+    text-decoration: underline;
+    
+}
+.navCard a:active{
+    color: white;
+    text-decoration: underline;
+    
+}
+
+
+/* galerija */
+
+.galleryContainer{
+    position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  .slideImage{
+      max-width: 100%;
+      min-width: 100%;
+      max-height: 100%;
+      height: 30rem;
+  }
+
+  /* canvas */
+
+  canvas{
+      /* min-height: 100%;
+      min-height: 100%;
+      max-width: 100%;
+      max-height: 100%; */
+  }
+
+  textarea{
+      resize: none;
+  }
+  .extender{
+      min-height: 100vh;
+  }
+
+  .basicLink:hover{
+      text-decoration: underline;
+  }

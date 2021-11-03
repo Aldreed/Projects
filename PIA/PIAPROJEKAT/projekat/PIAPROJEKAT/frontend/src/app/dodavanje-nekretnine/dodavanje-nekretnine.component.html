@@ -1,0 +1,212 @@
+<section class="bg-prime"><div class="bg-light container">
+  
+    <h2 style="color: black;">Dodavanje nekretnine</h2>
+  
+    <form [formGroup]='form'>
+        <div class="container">
+            <table class="bg-light">
+             <tr>
+               <td>Naziv:</td>
+               <td><input formControlName="naziv" type="text" /><br/></td>
+               <td *ngIf='failed&&form.controls.naziv.errors'>
+                 {{poruka}}
+               </td>
+             </tr>
+  
+             <tr>
+               <td>
+                 Grad:
+               </td>
+               <td>
+                 <input formControlName="grad" type="text" /><br/>
+               </td>
+               <td *ngIf='failed&&form.controls.grad.errors'>
+                 {{poruka}}
+               </td>
+             </tr>
+  
+  
+             <tr>
+              <td>
+                Opstina:
+              </td>
+              <td>
+                <input formControlName="opstina" type="text"  /><br/>
+              </td>
+              <td *ngIf='failed&&form.controls.opstina.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+  
+  
+            <tr>
+              <td>
+                Ulica:
+              </td>
+              <td>
+                <input formControlName="ulica" type="text" /><br/>
+              </td>
+              <td *ngIf='failed&&form.controls.ulica.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+  
+  
+            <tr>
+              <td>
+                Broj :
+              </td>
+              <td>
+                <input formControlName="brojUlice" type="number" />(Za BB stavite 0)<br/>
+              </td>
+              <td *ngIf='failed&&form.controls.brojUlice.errors'>
+                {{poruka}}
+              </td>
+            </tr>
+  
+             <tr>
+               <td>
+                 tip:
+               </td>
+               <td>
+                 <input formControlName="tip" type="radio" id="tip" name="tip" value="stan" />Stan
+                 <input formControlName="tip" type="radio" id="tip" name="tip" value="kuca" />Kuca
+                 <br/>
+               </td>
+               <td *ngIf='failed&&form.controls.tip.errors'>
+                 {{poruka}}
+               </td>
+             </tr>
+  
+             <tr *ngIf='form.value.tip=="kuca"'>
+               <td>Broj spratova:</td>
+               <td><input formControlName="brSpratova" type="number"  /><br/></td>
+               <td *ngIf='failed&&form.controls.brSpratova.errors'>
+                 {{poruka}}
+               </td>
+             </tr>
+  
+             <tr *ngIf='form.value.tip=="stan"'>
+              <td>Na kom spratu se nalazi:</td>
+              <td><input formControlName="naKomSpratu" type="number"  />(za prizemlje stavite 0)<br/></td>
+              <td *ngIf='failed&&form.controls.naKomSpratu.errors'>
+                {{poruka}}
+              </td>
+              <td *ngIf='failedStan'>
+                Pogrešno uneti podaci
+              </td>
+            </tr>
+  
+  
+            <tr *ngIf='form.value.tip=="stan"'>
+              <td>Ukpan broj spratova Zgrade</td>
+              <td><input formControlName="spratoviZgrade" type="number"  /><br/></td>
+              <td *ngIf='failed&&form.controls.spratoviZgrade.errors'>
+                {{poruka}}
+              </td>
+              <td *ngIf='failedStan'>
+                Pogrešno uneti podaci
+              </td>
+            </tr>
+  
+             <tr>
+               <td>kvadratura:</td>
+               <td><input formControlName="kvadratura" type="number"  /><br/></td>
+               <td *ngIf='failed&&form.controls.kvadratura.errors'>
+                 {{poruka}}
+               </td>
+             </tr>
+  
+             <tr>
+               <td>brSoba:</td>
+               <td><input formControlName="brSoba" type="number" /><br/></td>
+               <td *ngIf='failed&&form.controls.brSoba.errors'>
+                 {{poruka}}
+               </td>
+             </tr>
+  
+             <tr>
+               <td>Namestena</td>
+               <td>
+                 <input formControlName="namestena" type="radio" id='namestena' name="namestena"  value="true" />Namestena
+                 <input formControlName="namestena" type="radio" id='namestena' name="namestena"  value="false"/>Nenamestena
+                <br/></td>
+               <td *ngIf='failed&&form.controls.namestena.errors'>
+                 {{poruka}}
+               </td>
+             </tr>
+  
+             <tr>
+                <td>Tip prodaje:</td>
+                <td>
+                  <input formControlName="tipProdaje" type="radio" name="tipProdaje" id="tipProdaje" value="izdavanje"/>Izdavanje
+                  <input formControlName="tipProdaje" type="radio" name="tipProdaje" id="tipProdaje" value="prodaja" />Prodaja
+                  <br/></td>
+                <td *ngIf='failed&&form.controls.tipProdaje.errors'>
+                  {{poruka}}
+                </td>
+              </tr>
+  
+  
+             <tr>
+                <td>Cena:</td>
+                <td><input formControlName="cena" type="number" /><br/></td>
+                <td *ngIf='failed&&form.controls.cena.errors'>
+                  {{poruka}}
+                </td>
+              </tr>
+  
+              <tr>
+                  <td>
+                      Media:
+                      (images or mp4)
+                  </td>
+              </tr>
+  
+              <tr>
+                <td>
+                    <input type="file" accept="video/mp4 image/jpg image/png image/jpeg" (change)="onFileSelect($event)" id='media1' name='media1' formControlName='img1' >
+                </td>
+                <td *ngIf='failed&&((videos.length+images.length)<3)'>
+                    {{poruka}}
+                  </td>
+              </tr>
+  
+              <tr>
+                <td>
+                    <input type="file" accept="video/mp4 img/jpg img/png img/jpeg" (change)="onFileSelect($event)" formControlName='img2'>
+                </td>
+  
+              </tr>
+  
+              <tr>
+                <td>
+                    <input type="file" accept="video/mp4 img/jpg img/png img/jpeg" (change)="onFileSelect($event)" formControlName='img3'>
+                </td>
+              </tr>
+  
+              <tr *ngIf='videos.length+images.length<3'>
+                <td >
+                  Morate uneti sva tri fajla
+                </td>
+              </tr>
+  
+           </table>
+         </div>
+  
+        </form>
+        <div *ngIf='user.tip=="admin"' class="container">
+          Korisnik:<input type="text" name="username" [(ngModel)]="username" />
+          <div *ngIf='porukaUsername'>
+            {{porukaUsername}}
+          </div>
+          
+        </div>
+        <div class="container">
+            <button (click)="dodajNekretninu()">Dodaj</button>
+        </div>
+  
+  
+</div>
+</section>
+

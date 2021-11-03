@@ -1,0 +1,174 @@
+
+
+<body>
+    <section *ngIf="user==null" class="bg-prime">
+        <div class="bg-light container center-text">
+            <h3>Prijava</h3>
+            <div>
+                <form [formGroup]='formPrijava' class="container center-text">
+                    <table class="container">
+                        <tr>
+                            <td>Korisnicko ime:</td>
+                            <td>
+                                <input type="text" formControlName='username'/><br>
+                                <div *ngIf='formPrijava.controls.username.errors&&formPrijava.controls.username.touched||failed'>
+                                    Polje je obavezno
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lozinka:</td>
+                            <td>
+                                <input type="password" formControlName='password'/><br>
+                                <div *ngIf='formPrijava.controls.password.errors&&formPrijava.controls.password.touched||failed'>
+                                    Polje je obavezno
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>
+                        <button (click)='prijava()' >Prijava</button><br>
+                        <a routerLink="/register">Registracija</a>
+                    </div>
+                    <div *ngIf='poruka'>
+                        {{poruka}}
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="bg-dark" *ngIf='featuredOmotac.length>0&&user!=null'>
+        <div class="container galleryContainer">
+            <h2 class="center-text">Promovisane</h2>
+                <div *ngFor='let f of featuredOmotac' class="mySlides">
+                        <img class="slideImage"[src]="f.media[0].mediaPath" alt={{f.nekretnina.naziv}}>
+                </div>
+                <div class="prev" (click)="plusSlides(-1)">&#10094;</div>
+                <div class="next" (click)="plusSlides(1)">&#10095;</div>
+                <div class="caption-container">
+                    <p id="caption"></p>
+                  </div>
+        </div>
+    </section>
+    <section *ngIf='user!=null&&(user.tip=="admin"||user.tip=="agent")'>
+        <div class="container">
+            <canvas id="myChart" class="canvasT"></canvas>
+            <div class="split center-text">
+                <div><button (click)='getPriceChart()'>Cene</button></div>
+                <div><button (click)='getCityChart()'>Grad</button></div>
+                <div><button (click)='getStanChart()'>Stan</button></div>
+                <div><button (click)='getKuceChart()'>Kuce</button></div>
+            </div>
+            <div *ngIf='stepActive' class="container center-text">
+                Raspon:<input type="number" name="step" [(ngModel)]='step'>
+            </div>
+        </div>
+    </section>
+    <section class="bg-prime extender">
+        <div>
+            <div class="container">
+                <h2 class="center-text">Forma za pretragu</h2>
+                <div class="searchbar">
+                    <form [formGroup]='form'>
+                        <div class="container container-narrow split">
+                            <div>max:<input type="number" formControlName='maxCena' ></div>
+                            <div>min:<input type="number" formControlName='minCena' ></div>
+                            <div>Grad: <input type="text" formControlName='grad' ></div>
+                            <div class="btn"><button (click)="pretraga()">Pretraga</button></div>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+                <div class="container">
+                    <table class="searchTable">
+                        <tr *ngFor='let r of searchedOmotac' class="searchRes">
+                            <div class="search">
+                                <div (click)='choose(r.nekretnina)' class="container">
+                                    <hr>
+                                    <div class="split">
+                                          <div>
+                                              <table style="max-width: 100%;">
+                                                  <tr>
+                                                      <td>Naziv:</td>
+                                                      <td>{{r.nekretnina.naziv}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Vlasnik:</td>
+                                                      <td>{{r.nekretnina.vlasnik}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Opstina:</td>
+                                                      <td>{{r.nekretnina.opstina}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Grad:</td>
+                                                      <td>{{r.nekretnina.grad}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Tip prodaje:</td>
+                                                      <td>{{r.nekretnina.tipProdaje}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Tip nekrenine:</td>
+                                                      <td>{{r.nekretnina.tip}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td> Br. soba:</td>
+                                                      <td>{{r.nekretnina.brSoba}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Kvadratura:</td>
+                                                      <td>{{r.nekretnina.kvadratura}}</td>
+                                                  </tr>
+                                                  <tr>
+                                                      <td>Cena:</td>
+                                                      <td>{{r.nekretnina.cena}}</td>
+                                                  </tr>
+                                              </table> 
+                                            </div>
+                                            <div>
+                                                <img [src]='r.pickedMedia' alt="image not found"/>
+                                            </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </tr>
+                    </table>
+                </div>
+        </div>
+    </section>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+        </script>
+</body>
+

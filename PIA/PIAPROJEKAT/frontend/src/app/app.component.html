@@ -1,0 +1,32 @@
+
+<header class>
+    <div class="headerImg">
+        <div class="Logo container">
+            <div class="homeText"><h2>Home</h2> </div>
+            <div class="horisonText"><h2>horison</h2></div>
+        </div>
+        <div class="split" *ngIf="render">
+            <div class="navCard" routerLinkActive="active"><a routerLink="pocetna">Pocetna</a></div>
+            <div class="navCard" routerLinkActive="active" *ngIf='user.tip!="admin"'><a routerLink="aktivnePoruke">Inbox</a></div>
+            <div class="navCard" routerLinkActive="active" ><a routerLink="dodavanjeNekretnine">Dodaj Nekretinu</a></div>
+            <div class="navCard" routerLinkActive="active" *ngIf='user.tip=="agent"'><a routerLink="agent">Agent</a></div>
+            <div class="navCard" routerLinkActive="active" *ngIf='user.tip=="admin"'><a routerLink="admin">Admin</a></div>
+            <div class="navCard" routerLinkActive="active" *ngIf='user.tip=="korisnik"'><a routerLink="editUser">Profil</a></div>
+        </div>
+    </div>
+
+</header>
+<router-outlet></router-outlet>
+<footer class="bg-light">
+    <hr style="padding: 0%; margin: 0%;">
+    <div *ngIf="render" class="container center-text">
+        <a class="basicLink" (click)="logout()">
+            Logout
+        </a>
+    </div>
+    <div class="container center-text" style="font-size: 1rem;">
+        Copyright© 2021<br> Bogdan Žunić
+    </div>
+</footer>
+
+

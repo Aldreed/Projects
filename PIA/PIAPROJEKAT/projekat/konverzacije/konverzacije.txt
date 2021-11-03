@@ -1,0 +1,222 @@
+/* 1 */
+{
+    "_id" : ObjectId("60f0229386e3e91fdc75bbe8"),
+    "poruke" : [ 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor12",
+            "poruka" : "Hi",
+            "time" : 1626350227112.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor12",
+            "poruka" : "Da li moze stan",
+            "time" : 1626350233443.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "prihvacena",
+            "sender" : "kor12",
+            "poruka" : "",
+            "time" : 1626350244638.0,
+            "tipPoruke" : "ponudaIzdavanje",
+            "cena" : 100,
+            "datumOd" : "2021-09-10",
+            "datumTo" : "2021-10-07",
+            "tipUser" : "korisnik"
+        }
+    ],
+    "IdKon" : 1,
+    "IdNek" : 3,
+    "naziv" : "Trosoban Stan",
+    "vlasnik" : "kor",
+    "kupac" : "kor12",
+    "status" : "arhivirana",
+    "poslednjaPoruka" : ISODate("2021-07-15T11:57:24.638Z"),
+    "vlasnikCur" : 1,
+    "kupacCur" : 1,
+    "Cur" : 1,
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("60f022f986e3e91fdc75bbe9"),
+    "poruke" : [ 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor12",
+            "poruka" : "Zdravo Moze kuca ?",
+            "time" : 1626350329162.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor12",
+            "poruka" : "",
+            "time" : 1626350338845.0,
+            "tipPoruke" : "ponudaIzdavanje",
+            "cena" : 100,
+            "datumOd" : "2021-07-14",
+            "datumTo" : "2021-09-16",
+            "tipUser" : "korisnik"
+        }
+    ],
+    "IdKon" : 2,
+    "IdNek" : 5,
+    "naziv" : "Kuca Dva",
+    "vlasnik" : "agencija",
+    "kupac" : "kor12",
+    "status" : "aktivna",
+    "poslednjaPoruka" : ISODate("2021-07-15T11:58:58.845Z"),
+    "vlasnikCur" : 1,
+    "kupacCur" : 1,
+    "Cur" : 1,
+    "__v" : 0
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("60f0239c86e3e91fdc75bbea"),
+    "poruke" : [ 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor12",
+            "poruka" : "Hi\n",
+            "time" : 1626350492307.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor12",
+            "poruka" : "Moze stan",
+            "time" : 1626350497203.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "odbijena",
+            "sender" : "kor12",
+            "poruka" : "",
+            "time" : 1626350505901.0,
+            "tipPoruke" : "ponudaIzdavanje",
+            "cena" : 100,
+            "datumOd" : "2021-07-14",
+            "datumTo" : "2021-10-14",
+            "tipUser" : "korisnik"
+        }
+    ],
+    "IdKon" : 3,
+    "IdNek" : 3,
+    "naziv" : "Trosoban Stan",
+    "vlasnik" : "kor",
+    "kupac" : "kor12",
+    "status" : "arhivirana",
+    "poslednjaPoruka" : ISODate("2021-07-15T12:01:45.901Z"),
+    "vlasnikCur" : 1,
+    "kupacCur" : 1,
+    "Cur" : 1,
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("60f0256186e3e91fdc75bbeb"),
+    "poruke" : [ 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor",
+            "poruka" : "Hi",
+            "time" : 1626350945745.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor",
+            "poruka" : "",
+            "time" : 1626351025317.0,
+            "tipPoruke" : "ponudaProdaja",
+            "cena" : 100,
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor",
+            "poruka" : "d",
+            "time" : 1626351201340.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor",
+            "time" : 1626351847601.0,
+            "tipPoruke" : "ponudaProdaja",
+            "cena" : 1,
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor",
+            "poruka" : "hi",
+            "time" : 1626351884852.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }
+    ],
+    "IdKon" : 4,
+    "IdNek" : 4,
+    "naziv" : "Kuca Jedan",
+    "vlasnik" : "agencija",
+    "kupac" : "kor",
+    "status" : "aktivna",
+    "poslednjaPoruka" : ISODate("2021-07-15T12:24:44.852Z"),
+    "vlasnikCur" : 2,
+    "kupacCur" : 2,
+    "Cur" : 2,
+    "__v" : 0
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("60f0299886e3e91fdc75bbec"),
+    "poruke" : [ 
+        {
+            "prihvacena" : "cekanje",
+            "sender" : "kor",
+            "poruka" : "dasdas",
+            "time" : 1626352024741.0,
+            "tipPoruke" : "tekst",
+            "tipUser" : "korisnik"
+        }, 
+        {
+            "prihvacena" : "prihvacena",
+            "sender" : "kor",
+            "poruka" : "",
+            "time" : 1626352045111.0,
+            "tipPoruke" : "ponudaIzdavanje",
+            "cena" : 123,
+            "datumOd" : "2021-07-20",
+            "datumTo" : "2021-08-12",
+            "tipUser" : "korisnik"
+        }
+    ],
+    "IdKon" : 5,
+    "IdNek" : 5,
+    "naziv" : "Kuca Dva",
+    "vlasnik" : "agencija",
+    "kupac" : "kor",
+    "status" : "aktivna",
+    "poslednjaPoruka" : ISODate("2021-07-15T12:27:25.111Z"),
+    "vlasnikCur" : 2,
+    "kupacCur" : 2,
+    "Cur" : 2,
+    "__v" : 0
+}

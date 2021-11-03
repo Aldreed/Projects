@@ -1,0 +1,84 @@
+<section class="bg-prime extender">
+    
+    <div class="bg-light container center-text"> 
+        Naziv:{{myNekretnina.nekretnina.naziv}}<br>
+        Tip:{{myNekretnina.nekretnina.tip}}<br>
+    
+        <div *ngIf='myNekretnina.nekretnina.tip=="kuca"'>
+            Broj spratova:{{myNekretnina.nekretnina.brSpratova}}<br>
+        </div>
+        <div *ngIf='myNekretnina.nekretnina.tip=="stan"'>
+            Sprat nekretnine:{{myNekretnina.nekretnina.naKomSpratu}}<br>
+            Spratovi zgrade:{{myNekretnina.nekretnina.spratoviZgrade}}<br>
+        </div>
+    
+        Grad:{{myNekretnina.nekretnina.grad}}<br>
+        Opstina:{{myNekretnina.nekretnina.opstina}}<br>
+        Ulica:{{myNekretnina.nekretnina.ulica}}<br>
+    
+        Tip prodaje:{{myNekretnina.nekretnina.tipProdaje}}<br>
+    
+        Vlasnik:{{myNekretnina.nekretnina.vlasnik}}<br>
+    
+        <div>
+            <div *ngIf='!viewMedia'>
+                <button (click)="prikaziMedije()">Prikazi medije</button>
+            </div>
+            <div class="container galleryContainer">
+                <div *ngFor='let m of myNekretnina.media' class="mySlides" >
+                    <div *ngIf='m.mediaType=="image"&&viewMedia' >
+                        <img [src]="m.mediaPath" class="slideImage" alt={{myNekretnina.nekretnina.naziv}} />
+                    </div>
+                    <div *ngIf='m.mediaType=="video"&&viewMedia' class="slideImage">
+                        <video [src]="m.mediaPath" onclick="this.play()">{{myNekretnina.nekretnina.naziv}}</video>
+                    </div>
+                    <div>
+                        Br. Media:{{myNekretnina.media.indexOf(m)}}
+                    </div>
+                </div>
+                <div class="prev" (click)="plusSlides(-1)" *ngIf='viewMedia'>&#10094;</div>
+                <div class="next" (click)="plusSlides(1)" *ngIf='viewMedia'>&#10095;</div>
+            </div>
+        </div> <br>
+    
+    
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="izdavanje" '>
+                Od:<input type="date" name="odDate"  [(ngModel)]='odDate' id="odDate">
+                Do:<input type="date" name="toDate" [(ngModel)]='doDate' id="toDate">
+                <div *ngIf='pogresanDatumPoruka'>{{pogresanDatumPoruka}}</div>
+            </div>
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="prodaja"'>
+                Gotovina:<input type="radio" name="nacinPlacanja" [(ngModel)]="tipPlacanja" value="gotovina">
+                Kredit:<input type="radio" name="nacinPlacanja" [(ngModel)]="tipPlacanja" value="kredit">
+                <div *ngIf="prodajaPoruka">
+                    {{prodajaPoruka}}
+                </div>
+            </div>
+    
+            <div *ngIf='ucesce'>
+                ucesce:{{ucesce}}
+            </div>
+    
+            <div *ngIf='totalCost&&!pogresanDatumPoruka'>
+                Ukupno:{{totalCost}}
+                Transakcija se procesira, agencija mora da odobri
+            </div>
+    
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="izdavanje"'>
+                <button (click)="placeOrderIzdavanje()">Zakupi</button>
+            </div>
+            <div *ngIf='myNekretnina.nekretnina.tipProdaje=="prodaja"'>
+                <button (click)="placeOrderProdaja()">Prodaja</button>
+            </div>
+    
+            <div>
+                <button (click)='pocniKonverzaciju()'>Razgovaraj</button>
+                <div *ngIf='porukaKonver'>{{porukaKonver}}</div>
+            </div>
+            <div>
+                Posete:
+                <div>{{myNekretnina.nekretnina.visits}}</div>
+            </div>
+    
+    </div>
+</section>

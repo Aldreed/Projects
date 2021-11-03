@@ -1,0 +1,68 @@
+<section class="bg-prime extender">
+    <div class="bg-light container">
+        <div class="container center-text">
+            <h4>Featured</h4>
+            <div *ngFor='let f of featured'>
+                {{f.IdNek}},{{f.naziv}},{{f.vlasnik}}
+                <button (click)='featureStop(f)'>Prekini promociju</button>
+            </div>
+        </div>
+        <hr>
+        <div class="container center-text">
+            <h4>Not Featured</h4>
+            <div *ngFor='let f of notFeatured'>
+                {{f.IdNek}},{{f.naziv}},{{f.vlasnik}}
+                <button (click)='feature(f)'>Promocija</button>
+            </div>
+        </div>
+        <hr>
+        <div class="container center-text">
+            <h4>Neodobrene Nekretnine</h4>
+            <div *ngFor='let n of neodobrene'>
+                {{n.IdNek}},{{n.naziv}},{{n.vlasnik}}
+                <button (click)='odobri(n)'>Odobri</button>
+            </div>
+        </div>
+        <hr>
+        <div class="container center-text">
+            <h4>Neodobrena Izdavanja</h4>
+            <div *ngFor='let i of izdavanjaNeodobrena'>
+                {{i.IdNek}},{{i.vlasnik}}
+                <button (click)='odobriI(i)'>Odobri</button>
+            </div>
+        </div>
+        <hr>
+        <div class="container center-text">
+            <h4>Neodobrene Prodaje</h4>
+            <div *ngFor='let i of prodajeNeodobrene'>
+                {{i.IdNek}},{{i.vlasnik}}
+                <button (click)='odobriP(i)'>Odobri</button>
+            </div>
+        </div>
+        <hr>
+        <div class="container center-text">
+            <h4>Izdavanja</h4>
+            <div *ngFor='let i of odobrenaIzdavanja'>
+                Nekretnina:{{i.IdNek}},Vlasnik:{{i.vlasnik}},Totalna cena:{{i.totalCost}},<span *ngIf='i.vlasnik!="agencija"'>Profit:{{i.totalCost*i.procenat}}</span><span *ngIf='i.vlasnik=="agencija"'>Profit:{{i.totalCost}}</span>
+            </div>
+            <div>
+                total:{{totalIzdavanje}};
+            </div>
+        </div>
+        <hr>
+        <div class="container center-text">
+            <h4>Prodaje</h4>
+            <div *ngFor='let i of odobreneProdaje'>
+                Nekretnina:{{i.IdNek}}
+                    Vlasnik:{{i.vlasnik}}
+                    Totalna Cena:{{i.totalCost}},<span *ngIf='i.vlasnik!="agencija"'>Profit:{{i.totalCost*i.procenat}}</span><span *ngIf='i.vlasnik=="agencija"'>Profit:{{i.totalCost}}</span>
+            </div>
+            <div>
+                total:{{totalProdaje}};
+            </div>
+        </div>
+        <div class="container center-text">
+            total:{{total}};
+        </div>
+    </div>
+</section>

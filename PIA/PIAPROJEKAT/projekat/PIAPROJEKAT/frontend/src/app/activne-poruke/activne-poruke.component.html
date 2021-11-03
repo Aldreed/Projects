@@ -1,0 +1,37 @@
+<header class="bg-light">
+    <div class="split">
+        <div class="navCard" style="text-decoration: underline; color: white;" ><a routerLink="/aktivnePoruke">Aktivne poruke</a></div>
+        <div class="navCard" ><a routerLink="arhiva">Arhiva</a></div>
+    </div>
+</header>
+<section class="bg-light extender">
+    <div *ngFor='let k of konv'>
+        <div (click)='izaberiKonverzaciju(k)' [class]="(((k.kupacCur<k.Cur)&&user.username==k.kupac)||((k.vlasnikCur<k.Cur)&&user.username==k.vlasnik)||((k.vlasnikCur<k.Cur)&&user.tip=='agent')) ? 'bg-dark':'bg-light'">
+            {{k.naziv}} {{helperDate(k.poslednjaPoruka)}};<br>
+            <div *ngIf="k.poruke[k.poruke.length-1].tipPoruke=='tekst'" class="messagePreview">
+                {{k.poruke[k.poruke.length-1].poruka.slice(0.,20)}}<span *ngIf="k.poruke[k.poruke.length-1].poruka.length>20">...</span>
+            </div>
+            <div *ngIf="k.poruke[k.poruke.length-1].tipPoruke!='tekst'" class="messagePreview">
+                Ponuda
+            </div>
+            <!-- <div *ngIf='((k.kupacCur<k.Cur)&&user.username==k.kupac)||((k.vlasnikCur<k.Cur)&&user.username==k.vlasnik)||((k.vlasnikCur<k.Cur)&&user.tip=="agent")'>
+                ding
+            </div> -->
+        </div>
+        <div>
+            <button (click)="arhiviraj(k)">Arhiviraj</button>
+        </div>
+    </div>
+    
+    <div *ngIf="konv.length>0">
+        <hr>
+        <h3>Dodaj Poruku</h3>
+        <div>
+            Odaberite Konverzaciju:<select name="izabranaKonvNum" [(ngModel)]='izabranaKonvNum'>
+                    <option *ngFor="let k of konv" value={{konv.indexOf(k)}}>{{k.naziv}}</option>
+            </select>
+        </div>
+        <textarea *ngIf='izabranaKonvNum!=null' name="tekstPoruke" id="" cols="40" rows="2" [(ngModel)]="tekstPoruke"></textarea>
+        <button *ngIf='izabranaKonvNum!=null'(click)="dodajPoruku()">Posalji</button>
+    </div>
+</section>

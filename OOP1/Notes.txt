@@ -1,0 +1,35 @@
+apstraktan konstruktor ? konstruktor ne moze da bude virtuelan pa ne moze da bude ni apstraktan
+nasledjivanje generika ? moze
+preklapanje operatora noexcept ? unaran operator ? ne moze
+definisanje metode genericke klase unutar genericke klase ????
+mehanizam generika staticki
+sablonske funkicje ne mogu imati pv za atgumente sablona
+podrayumevane vrednosti generika ?
+
+
+ne mogu da se menjaju znacenja operatora za primitivne tipove
+staticki op metodi
+nije dozvoljeno da se u programu nalaze obe funkcije za operatore globalna i metod varijanta
+postfiksno pozivanje t.operator++(k) ili operator++(T&, k) k ne mora da bude nula
+operator[] ne globalna;pazi nije indexiranje
+operator() ne globalna proizvoljan broj parametra
+operator za tip ne globalan ne sme da se navodi tip rezultata;uvek unaran nema parametre;notacija T(x) ne moze za tipove sa po dve reci;implicitna koverzija;explicit;dvoznacnost;kraj posldenjeg sladjda
+opeator za nabrajanja !!!!
+operator za cast ime funkcije u objektu moze li se pozvati explicitno? moze
+operator-> vraca referencu slajd 25 ? rekurzivno .operator itd itd
+
+
+constante klasnog tipa
+imenovana celobrojna konstanta enum? static inicijalizcija u klasi ? const enum moze cak iako mu se promeni pripadajuci tip
+rayresenje dosega ya lokalne klase
+
+
+slajd 50
+apstraktni staticke metode ?? apstraktne samo za virtuelne a virtuelne ne mogu da budu staticke
+sve metode sledi klasa je prijatelj
+lokalne klase ne mogu da imaju staticke atribute
+virtual reserved word ? da
+konstante funkcije slajd 29
+
+
+da li se oze pristupiti originalnoj virtualnoj metodi ako je definisan njen oblik za izvedenu klasu?
