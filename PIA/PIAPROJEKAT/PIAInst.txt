@@ -1,0 +1,4 @@
+backend/tsc 
+backend/npm run serve
+
+frontend/app ng serve open
